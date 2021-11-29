@@ -1,0 +1,26 @@
+/* Populate tables */
+INSERT INTO clientes (id, nombre, apellido, email, create_at) VALUES(1, 'Andres', 'Guzman', 'profesor@bolsadeideas.com', '28/08/2017');
+INSERT INTO clientes (id, nombre, apellido, email, create_at) VALUES(2, 'John', 'Doe', 'john.doe@gmail.com', '28/08/2017');
+INSERT INTO clientes (id, nombre, apellido, email, create_at) VALUES(3, 'Linus', 'Torvalds', 'linus.torvalds@gmail.com', '28/08/2017');
+INSERT INTO clientes (id, nombre, apellido, email, create_at) VALUES(4, 'Jane', 'Doe', 'jane.doe@gmail.com', '28/08/2017');
+INSERT INTO clientes (id, nombre, apellido, email, create_at) VALUES(5, 'Rasmus', 'Lerdorf', 'rasmus.lerdorf@gmail.com', '28/08/2017');
+INSERT INTO clientes (id, nombre, apellido, email, create_at) VALUES(6, 'Erich', 'Gamma', 'erich.gamma@gmail.com', '28/08/2017');
+INSERT INTO clientes (id, nombre, apellido, email, create_at) VALUES(7, 'Richard', 'Helm', 'richard.helm@gmail.com', '28/08/2017');
+INSERT INTO clientes (id, nombre, apellido, email, create_at) VALUES(8, 'Ralph', 'Johnson', 'ralph.johnson@gmail.com', '28/08/2017');
+INSERT INTO clientes (id, nombre, apellido, email, create_at) VALUES(9, 'John', 'Vlissides', 'john.vlissides@gmail.com', '28/08/2017');
+INSERT INTO clientes (id, nombre, apellido, email, create_at) VALUES(10, 'James', 'Gosling', 'james.gosling@gmail.com', '28/08/2017');
+INSERT INTO clientes (id, nombre, apellido, email, create_at) VALUES(11, 'Bruce', 'Lee', 'bruce.lee@gmail.com', '28/08/2017');
+INSERT INTO clientes (id, nombre, apellido, email, create_at) VALUES(12, 'Johnny', 'Doe', 'johnny.doe@gmail.com', '28/08/2017');
+INSERT INTO clientes (id, nombre, apellido, email, create_at) VALUES(13, 'John', 'Roe', 'john.roe@gmail.com', '28/08/2017');
+INSERT INTO clientes (id, nombre, apellido, email, create_at) VALUES(14, 'Jane', 'Roe', 'jane.roe@gmail.com', '28/08/2017');
+INSERT INTO clientes (id, nombre, apellido, email, create_at) VALUES(15, 'Richard', 'Doe', 'richard.doe@gmail.com', '28/08/2017');
+INSERT INTO clientes (id, nombre, apellido, email, create_at) VALUES(16, 'Janie', 'Doe', 'janie.doe@gmail.com', '28/08/2017');
+INSERT INTO clientes (id, nombre, apellido, email, create_at) VALUES(17, 'Phillip', 'Webb', 'phillip.webb@gmail.com', '28/08/2017');
+INSERT INTO clientes (id, nombre, apellido, email, create_at) VALUES(18, 'Stephane', 'Nicoll', 'stephane.nicoll@gmail.com', '28/08/2017');
+INSERT INTO clientes (id, nombre, apellido, email, create_at) VALUES(19, 'Sam', 'Brannen', 'sam.brannen@gmail.com', '28/08/2017');  
+INSERT INTO clientes (id, nombre, apellido, email, create_at) VALUES(20, 'Juergen', 'Hoeller', 'juergen.Hoeller@gmail.com', '28/08/2017'); 
+INSERT INTO clientes (id, nombre, apellido, email, create_at) VALUES(21, 'Janie', 'Roe', 'janie.roe@gmail.com', '28/08/2017');
+INSERT INTO clientes (id, nombre, apellido, email, create_at) VALUES(22, 'John', 'Smith', 'john.smith@gmail.com', '28/08/2017');
+INSERT INTO clientes (id, nombre, apellido, email, create_at) VALUES(23, 'Joe', 'Bloggs', 'joe.bloggs@gmail.com', '28/08/2017');
+INSERT INTO clientes (id, nombre, apellido, email, create_at) VALUES(24, 'John', 'Stiles', 'john.stiles@gmail.com', '28/08/2017');
+INSERT INTO clientes (id, nombre, apellido, email, create_at) VALUES(25, 'Richard', 'Roe', 'stiles.roe@gmail.com', '28/08/2017');

@@ -1,0 +1,12 @@
+co\com\institucion\web\service\InfoColegioRegServiceImpl.class
+co\com\institucion\web\service\IInfoColegioDelService.class
+co\com\institucion\web\service\IInfoColegioListService.class
+co\com\institucion\web\service\rest\RestApplicationConfig.class
+co\com\institucion\web\service\InfoColegioListServiceImpl.class
+co\com\institucion\web\service\dto\ResponseDTO.class
+co\com\institucion\web\service\InfoColegioDelServiceImpl.class
+co\com\institucion\web\service\InfoColegioModServiceImpl.class
+co\com\institucion\web\service\IInfoColegioListAllService.class
+co\com\institucion\web\service\InfoColegioListAllServiceImpl.class
+co\com\institucion\web\service\IInfoColegioModService.class
+co\com\institucion\web\service\IInfoColegioRegService.class
