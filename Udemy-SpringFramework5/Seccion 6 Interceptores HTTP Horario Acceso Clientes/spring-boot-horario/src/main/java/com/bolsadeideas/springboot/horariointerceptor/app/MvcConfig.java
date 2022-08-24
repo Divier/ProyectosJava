@@ -16,7 +16,8 @@ public class MvcConfig implements WebMvcConfigurer{
 	
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
-		registry.addInterceptor(horario).excludePathPatterns("/cerrado");
+		registry.addInterceptor(horario).excludePathPatterns("/cerrado"); //Aqui en este caso es importante excluir la ruta cerrado sino quedaria en un ciclo infinito
+		//registry.addInterceptor(horario);
 	}
 
 }

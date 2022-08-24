@@ -15,8 +15,11 @@ import com.bolsadeideas.springboot.app.auth.service.JWTService;
 /*import com.bolsadeideas.springboot.app.auth.handler.LoginSuccessHandler;*/
 import com.bolsadeideas.springboot.app.models.service.JpaUserDetailsService;
 
-@EnableGlobalMethodSecurity(securedEnabled=true, prePostEnabled=true)
-@Configuration
+/*
+ * Clase utilizada para el manejo de JWT con Spring Boot < a 2.7.0
+ */
+//@EnableGlobalMethodSecurity(securedEnabled=true, prePostEnabled=true)
+//@Configuration
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
 
 	/*

@@ -1,9 +1,13 @@
 package com.bolsadeideas.springboot.app.auth.service;
 
 import java.io.IOException;
+import java.security.Key;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Date;
+
+import javax.crypto.SecretKey;
+import javax.crypto.spec.SecretKeySpec;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -19,6 +23,7 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.security.Keys;
 
 @Component
 public class JWTServiceImpl implements JWTService {
@@ -28,6 +33,11 @@ public class JWTServiceImpl implements JWTService {
 	public static final long EXPIRATION_DATE = 14000000L;
 	public static final String TOKEN_PREFIX = "Bearer ";
 	public static final String HEADER_STRING = "Authorization";
+	
+	// Nuevas formas de generar la clave secreta
+	public static final Key SECRET_KEY = Keys.secretKeyFor(SignatureAlgorithm.HS512); // Spring genera la palabra secreta automaticamente
+	public static final SecretKey SECRET_KEY2 = Keys.hmacShaKeyFor("algunaLlaveSecretaaaaaaaaaaaaaaa".getBytes());
+	public static final SecretKey SECRET_KEY3 = new SecretKeySpec("algunaLlaveSecretaaaaaaaaaaaaaaa".getBytes(), SignatureAlgorithm.HS256.getJcaName());
 	
 	@Override
 	public String create(Authentication auth) throws IOException {
@@ -39,9 +49,16 @@ public class JWTServiceImpl implements JWTService {
 		Claims claims = Jwts.claims();
 		claims.put("authorities", new ObjectMapper().writeValueAsString(roles));
 
-		String token = Jwts.builder().setClaims(claims).setSubject(username)
+		//signWith deprecated
+		/*String token = Jwts.builder().setClaims(claims).setSubject(username)
 				.signWith(SignatureAlgorithm.HS512, SECRET.getBytes()).setIssuedAt(new Date())
-				.setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_DATE)).compact();
+				.setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_DATE)).compact();*/
+		
+		String token = Jwts.builder()
+	            .setClaims(claims)
+	            .setSubject(username)
+	            .signWith(SECRET_KEY3)
+	            .setExpiration(new Date(System.currentTimeMillis() + 3600000*4)).compact();
 
 		return token;
 	}
@@ -62,8 +79,13 @@ public class JWTServiceImpl implements JWTService {
 
 	@Override
 	public Claims getClaims(String token) {
-		Claims claims = Jwts.parser().setSigningKey(SECRET.getBytes())
-				.parseClaimsJws(resolve(token)).getBody();
+		
+		//parser deprecated and setSigningKey deprecated
+		/*Claims claims = Jwts.parser().setSigningKey(SECRET.getBytes())
+				.parseClaimsJws(resolve(token)).getBody();*/
+		Claims claims = Jwts.parser()
+                .setSigningKey(SECRET_KEY3)
+                .parseClaimsJws(resolve(token)).getBody();
 		return claims;
 	}
 

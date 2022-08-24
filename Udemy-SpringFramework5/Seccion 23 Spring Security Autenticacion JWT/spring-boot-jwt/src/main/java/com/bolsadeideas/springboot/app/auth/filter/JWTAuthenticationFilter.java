@@ -41,7 +41,7 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 	@Override
 	public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)
 			throws AuthenticationException {
-		
+		// Aplica cuando se envian los datos de autenticacion por medio de formulario o forma-data
 		String username = obtainUsername(request);
 		String password = obtainPassword(request);
 		
@@ -49,7 +49,7 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 			logger.info("Username desde request parameter (form-data): " + username);
 			logger.info("Password desde request parameter (form-data): " + password);
 			
-		} else {
+		} else { //Aplica cuando se envian los datos de autenticacion por medio de un JSON
 			Usuario user = null;
 			try {
 				

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Seccion1234y5_Introduccion.iml" filepath="$PROJECT_DIR$/.idea/Seccion1234y5_Introduccion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/curso-spring-kubernetes/curso-spring-kubernetes.iml" filepath="$PROJECT_DIR$/curso-spring-kubernetes/curso-spring-kubernetes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/curso-spring-kubernetes/ms-cursos/ms-cursos.iml" filepath="$PROJECT_DIR$/curso-spring-kubernetes/ms-cursos/ms-cursos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/curso-spring-kubernetes/ms-usuarios/ms-usuarios.iml" filepath="$PROJECT_DIR$/curso-spring-kubernetes/ms-usuarios/ms-usuarios.iml" />
+    </modules>
+  </component>
+</project>

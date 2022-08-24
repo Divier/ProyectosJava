@@ -54,7 +54,7 @@ public class TiempoTranscurridoInterceptor implements HandlerInterceptor{
 		long tiempoInicio = (Long) request.getAttribute("tiempoInicio");
 		long tiempoTranscurrido = tiempoFin - tiempoInicio;
 		
-		if(handler instanceof HandlerMethod && modelAndView != null) {
+		if(handler instanceof HandlerMethod && modelAndView != null) {// Importante hace la validacion del null para modelAndView ya que se pueden interceptar recursos estaticos 
 			modelAndView.addObject("tiempoTranscurrido", tiempoTranscurrido);
 		}
 		logger.info("Tiempo Transcurrido: " + tiempoTranscurrido + " milisegundos");
