@@ -26,7 +26,7 @@ public class Client {
     private String name;
     private String lastname;
 
-    // @JoinColumn(name = "client_id")
+    //@JoinColumn(name = "client_id")
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinTable(
         name = "tbl_clientes_to_direcciones", 
@@ -35,9 +35,8 @@ public class Client {
         uniqueConstraints = @UniqueConstraint(columnNames = {"id_direcciones"}))
     private Set<Address> addresses;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy="client")
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "client")
     private Set<Invoice> invoices;
-
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "client")
     private ClientDetails clientDetails;
@@ -125,7 +124,7 @@ public class Client {
                 ", lastname=" + lastname +
                 ", invoices=" + invoices +
                 ", addresses=" + addresses +
-                ", clientDetails=" + clientDetails +
+                //", clientDetails=" + clientDetails +
                  "}";
     }
 

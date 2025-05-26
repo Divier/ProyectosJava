@@ -53,6 +53,8 @@ public class Address {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((id == null) ? 0 : id.hashCode());
+        result = prime * result + ((street == null) ? 0 : street.hashCode());
+        result = prime * result + ((number == null) ? 0 : number.hashCode());
         return result;
     }
 

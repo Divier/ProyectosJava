@@ -47,7 +47,25 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		manyToManyRemoveBidireccionalFind();
+		//oneToMany();
+		//oneToManyFindById();
+		//removeAddress();
+		//removeAddressFindById();
+		//oneToManyInvoiceBidireccional();
+		//oneToManyInvoiceBidireccionalFindById();
+		//manyToOne();
+		//nyToOneFindByIdClient();
+		//removeInvoiceBidireccionalFindById();
+		//removeInvoiceBidireccional();
+		//oneToOne();
+		//oneToOneFindById();
+		//oneToOneBidireccional();
+		//oneToOneBidireccionalFindById();
+		//manyToMany();
+		//manyToManyFind();
+		//manyToManyRemoveFind();
+		//manyToManyRemove();
+		manyToManyBidireccional();
 	}
 
 	@Transactional
@@ -151,7 +169,7 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner {
 	}
 
 	@Transactional
-	public void manyToManyBidireccional() {
+	public void manyToManyBidireccional() {//Testeado
 
 		Student student1 = new Student("Jano", "Pura");
 		Student student2 = new Student("Erba", "Doe");
@@ -173,7 +191,7 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner {
 	}
 
 	@Transactional
-	public void manyToManyRemove() {
+	public void manyToManyRemove() {//Testeado
 
 		Student student1 = new Student("Jano", "Pura");
 		Student student2 = new Student("Erba", "Doe");
@@ -207,7 +225,7 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner {
 	}
 
 	@Transactional
-	public void manyToManyRemoveFind() {
+	public void manyToManyRemoveFind() {//Testeado
 
 		Optional<Student> studentOptional1 = studentRepository.findById(1L);
 		Optional<Student> studentOptional2 = studentRepository.findById(2L);
@@ -243,7 +261,7 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner {
 	}
 
 	@Transactional
-	public void manyToManyFind() {
+	public void manyToManyFind() {//Testeado
 
 		Optional<Student> studentOptional1 = studentRepository.findById(1L);
 		Optional<Student> studentOptional2 = studentRepository.findById(2L);
@@ -264,7 +282,7 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner {
 	}
 
 	@Transactional
-	public void manyToMany() {
+	public void manyToMany() {//Testeado
 
 		Student student1 = new Student("Jano", "Pura");
 		Student student2 = new Student("Erba", "Doe");
@@ -282,7 +300,7 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner {
 	}
 
 	@Transactional
-	public void oneToOneBidireccionalFindById() {
+	public void oneToOneBidireccionalFindById() {//Testeado
 
 		Optional<Client> clientOptional = clientRepository.findOne(1L);
 		clientOptional.ifPresent(client -> {
@@ -297,7 +315,7 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner {
 	}
 
 	@Transactional
-	public void oneToOneBidireccional() {
+	public void oneToOneBidireccional() {//Testeado
 
 		Client client = new Client("Erba", "Pura");
 
@@ -311,7 +329,8 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner {
 	}
 
 	@Transactional
-	public void oneToOneFindById() {
+	public void oneToOneFindById() {//Testeado Funciona de forma unidireccional
+		
 		ClientDetails clientDetails = new ClientDetails(true, 5000);
 		clientDetailsRepository.save(clientDetails);
 
@@ -325,7 +344,8 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner {
 	}
 
 	@Transactional
-	public void oneToOne() {
+	public void oneToOne() {//Testeado Funciona de forma unidireccional
+		
 		ClientDetails clientDetails = new ClientDetails(true, 5000);
 		clientDetailsRepository.save(clientDetails);
 
@@ -337,7 +357,7 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner {
 	}
 
 	@Transactional
-	public void removeInvoiceBidireccional() {
+	public void removeInvoiceBidireccional() { //Testeado
 
 		Client client = new Client("Fran", "Moras");
 
@@ -366,7 +386,8 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner {
 	}
 
 	@Transactional
-	public void removeInvoiceBidireccionalFindById() {
+	public void removeInvoiceBidireccionalFindById() { //Testeado
+		
 		Optional<Client> optionalClient = clientRepository.findOne(1L);
 
 		optionalClient.ifPresent(client -> {
@@ -397,7 +418,8 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner {
 	}
 
 	@Transactional
-	public void oneToManyInvoiceBidireccionalFindById() {
+	public void oneToManyInvoiceBidireccionalFindById() {//Testeado
+		
 		Optional<Client> optionalClient = clientRepository.findOne(1L);
 
 		optionalClient.ifPresent(client -> {
@@ -414,7 +436,8 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner {
 	}
 
 	@Transactional
-	public void oneToManyInvoiceBidireccional() {
+	public void oneToManyInvoiceBidireccional() {//Testeado
+		
 		Client client = new Client("Fran", "Moras");
 
 		Invoice invoice1 = new Invoice("compras de la casa", 5000L);
@@ -428,7 +451,8 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner {
 	}
 
 	@Transactional
-	public void removeAddressFindById() {
+	public void removeAddressFindById() {//Testeado
+		
 		Optional<Client> optionalClient = clientRepository.findById(2L);
 		optionalClient.ifPresent(client -> {
 			Address address1 = new Address("El verjel", 1234);
@@ -445,7 +469,7 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner {
 
 			Optional<Client> optionalClient2 = clientRepository.findOneWithAddresses(2L);
 			optionalClient2.ifPresent(c -> {
-				c.getAddresses().remove(address2);
+				c.getAddresses().remove(address2);//El getAddresses funciona por la consulta personalizada en donde se trae la info de address.
 				clientRepository.save(c);
 				System.out.println(c);
 			});
@@ -454,7 +478,8 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner {
 	}
 
 	@Transactional
-	public void removeAddress() {
+	public void removeAddress() {//Testeado
+		
 		Client client = new Client("Fran", "Moras");
 
 		Address address1 = new Address("El verjel", 1234);
@@ -469,15 +494,16 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner {
 
 		Optional<Client> optionalClient = clientRepository.findById(3L);
 		optionalClient.ifPresent(c -> {
-			c.getAddresses().remove(address1);
+			c.getAddresses().remove(address1);//Se genera error de LAZY si no se deja EAGER la relacion con address, la otra opcion seria cambiar la consulta por una personalizada en donde se traiga la info de address.
 			clientRepository.save(c);
 			System.out.println(c);
 		});
 	}
 
 	@Transactional
-	public void oneToManyFindById() {
-		Optional<Client> optionalClient = clientRepository.findById(2L);
+	public void oneToManyFindById() {//Testeado
+		
+		Optional<Client> optionalClient = clientRepository.findById(1L);
 		optionalClient.ifPresent(client -> {
 			Address address1 = new Address("El verjel", 1234);
 			Address address2 = new Address("Vasco de Gama", 9875);
@@ -487,15 +513,23 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner {
 			addresses.add(address2);
 			client.setAddresses(addresses);
 
+			/*Set<Invoice> invoices = new HashSet<>();
+			Invoice i1 = new Invoice("Desc1", 10L);
+			Invoice i2 = new Invoice("Desc2", 20L);
+			invoices.add(i1);
+			invoices.add(i2);			
+			client.setInvoices(invoices);*/
+			
 			clientRepository.save(client);
-
+			
 			System.out.println(client);
 		});
 
 	}
 
 	@Transactional
-	public void oneToMany() {
+	public void oneToMany() { //Testeado
+		
 		Client client = new Client("Fran", "Moras");
 
 		Address address1 = new Address("El verjel", 1234);
@@ -510,7 +544,7 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner {
 	}
 
 	@Transactional
-	public void manyToOne() {
+	public void manyToOne() {//Testeado
 
 		Client client = new Client("John", "Doe");
 		clientRepository.save(client);
@@ -522,7 +556,7 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner {
 	}
 
 	@Transactional
-	public void manyToOneFindByIdClient() {
+	public void manyToOneFindByIdClient() {//Testeado
 
 		Optional<Client> optionalClient = clientRepository.findById(1L);
 
